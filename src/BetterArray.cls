@@ -1230,8 +1230,10 @@ Attribute Splice.VB_Description = "changes the contents of the array by removing
         i = ActualStart
         Dim j As Long
         For j = LBound(TempItems) To UBound(TempItems)
+            EnsureCapacity This.Length + 1
             LocalItems(i) = TempItems(j)
             inc i
+            inc This.Length
         Next
     End If
     
